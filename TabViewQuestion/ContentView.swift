@@ -8,17 +8,11 @@
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject var multipleViewModel: MultipleViewModel = MultipleViewModel()
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
-        }
-        .padding()
+        MultipleViewPage()
+            .environmentObject(multipleViewModel)
     }
 }
 
-#Preview {
-    ContentView()
-}
